@@ -31,30 +31,30 @@
         }
     </style>
 </head>
-<body class="h-screen w-screen flex flex-col items-center justify-center select-none bg-gradient-to-br from-slate-950 via-zinc-900 to-amber-950">
+<body class="h-screen w-screen flex flex-col items-center justify-center select-none bg-gradient-to-br from-slate-950 via-zinc-900 to-purple-950">
 
     <!-- Game Container -->
-    <div id="game-container" class="relative w-full max-w-4xl h-[90vh] max-h-[750px] bg-slate-900 border-4 border-amber-500/80 rounded-2xl overflow-hidden glow-box flex flex-col shadow-2xl">
+    <div id="game-container" class="relative w-full max-w-4xl h-[90vh] max-h-[750px] bg-slate-900 border-4 border-purple-500/80 rounded-2xl overflow-hidden glow-box flex flex-col shadow-2xl">
         
         <!-- Top HUD Bar -->
-        <div id="hud" class="absolute top-0 left-0 w-full bg-slate-950/80 backdrop-blur-md px-6 py-3 flex justify-between items-center border-b-2 border-amber-500/40 z-20 text-sm md:text-base">
+        <div id="hud" class="absolute top-0 left-0 w-full bg-slate-950/80 backdrop-blur-md px-6 py-3 flex justify-between items-center border-b-2 border-purple-500/40 z-20 text-sm md:text-base">
             <div class="flex items-center space-x-6">
                 <div>
-                    <span class="text-amber-400 arcade-font text-xs block mb-1">SCORE</span>
+                    <span class="text-purple-400 arcade-font text-xs block mb-1">SCORE</span>
                     <span id="score-display" class="font-extrabold text-2xl md:text-3xl text-white">0</span>
                 </div>
                 <div>
-                    <span class="text-orange-400 arcade-font text-xs block mb-1">COMBO</span>
-                    <span id="combo-display" class="font-extrabold text-xl md:text-2xl text-amber-300">1x</span>
+                    <span class="text-blue-400 arcade-font text-xs block mb-1">COMBO</span>
+                    <span id="combo-display" class="font-extrabold text-xl md:text-2xl text-purple-300">1x</span>
                 </div>
             </div>
             
             <div class="flex items-center space-x-6">
                 <div class="text-center">
                     <span class="text-rose-400 arcade-font text-xs block mb-1">LIVES</span>
-                    <div id="lives-display" class="flex space-x-1 text-xl">❤️❤️❤️</div>
+                    <div id="lives-display" class="flex space-x-1 text-xl">❤️❤️</div>
                 </div>
-                <button id="pause-btn" class="bg-amber-600 hover:bg-amber-500 text-white px-3 py-1.5 rounded-lg font-bold transition transform active:scale-95 border border-amber-400/50 flex items-center shadow">
+                <button id="pause-btn" class="bg-purple-600 hover:bg-purple-500 text-white px-3 py-1.5 rounded-lg font-bold transition transform active:scale-95 border border-purple-400/50 flex items-center shadow">
                     ⏸️
                 </button>
             </div>
@@ -65,34 +65,34 @@
 
         <!-- Start Screen Overlay -->
         <div id="start-screen" class="absolute inset-0 bg-slate-950/90 backdrop-blur-md flex flex-col items-center justify-center z-30 p-6 text-center">
-            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent pointer-events-none"></div>
-            <h1 class="arcade-font text-3xl md:text-5xl text-amber-400 glow-text mb-4 tracking-wider animate-pulse">WING CATCHER</h1>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent pointer-events-none"></div>
+            <h1 class="arcade-font text-3xl md:text-5xl text-purple-400 glow-text mb-4 tracking-wider animate-pulse">WING CATCHER</h1>
             <p class="text-slate-300 text-sm md:text-lg max-w-md mb-8">Catch golden, spicy, and classic crispy wings in your basket! Avoid the burnt bones & toxic peppers!</p>
             
             <!-- Controls Guide -->
-            <div class="bg-slate-900/80 border border-amber-500/30 rounded-xl p-4 mb-8 flex flex-col md:flex-row gap-4 items-center justify-center text-xs md:text-sm text-slate-300">
+            <div class="bg-slate-900/80 border border-purple-500/30 rounded-xl p-4 mb-8 flex flex-col md:flex-row gap-4 items-center justify-center text-xs md:text-sm text-slate-300">
                 <div class="flex items-center space-x-2">
-                    <kbd class="px-2 py-1 bg-slate-800 border border-slate-700 rounded text-amber-400 font-mono">←</kbd>
-                    <kbd class="px-2 py-1 bg-slate-800 border border-slate-700 rounded text-amber-400 font-mono">→</kbd>
+                    <kbd class="px-2 py-1 bg-slate-800 border border-slate-700 rounded text-purple-400 font-mono">←</kbd>
+                    <kbd class="px-2 py-1 bg-slate-800 border border-slate-700 rounded text-purple-400 font-mono">→</kbd>
                     <span>Move Basket</span>
                 </div>
                 <div class="flex items-center space-x-2">
-                    <kbd class="px-2 py-1 bg-slate-800 border border-slate-700 rounded text-amber-400 font-mono">A</kbd>
-                    <kbd class="px-2 py-1 bg-slate-800 border border-slate-700 rounded text-amber-400 font-mono">D</kbd>
+                    <kbd class="px-2 py-1 bg-slate-800 border border-slate-700 rounded text-purple-400 font-mono">A</kbd>
+                    <kbd class="px-2 py-1 bg-slate-800 border border-slate-700 rounded text-purple-400 font-mono">D</kbd>
                     <span>Alternative</span>
                 </div>
             </div>
 
-            <button id="start-btn" class="arcade-font bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-black px-8 py-4 rounded-xl text-lg md:text-xl shadow-lg shadow-amber-500/30 transform transition hover:scale-105 active:scale-95 cursor-pointer border-2 border-amber-300">
+            <button id="start-btn" class="arcade-font bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-400 hover:to-blue-500 text-slate-950 font-black px-8 py-4 rounded-xl text-lg md:text-xl shadow-lg shadow-purple-500/30 transform transition hover:scale-105 active:scale-95 cursor-pointer border-2 border-purple-300">
                 START FEAST
             </button>
         </div>
 
         <!-- Pause Menu Overlay -->
         <div id="pause-screen" class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm flex flex-col items-center justify-center z-30 hidden">
-            <h2 class="arcade-font text-3xl text-amber-400 glow-text mb-6">GAME PAUSED</h2>
+            <h2 class="arcade-font text-3xl text-purple-400 glow-text mb-6">GAME PAUSED</h2>
             <div class="flex flex-col space-y-4 w-48">
-                <button id="resume-btn" class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-3 rounded-xl transition shadow">RESUME</button>
+                <button id="resume-btn" class="bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 rounded-xl transition shadow">RESUME</button>
                 <button id="restart-from-pause-btn" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold py-3 rounded-xl transition border border-slate-700">RESTART</button>
             </div>
         </div>
@@ -100,12 +100,12 @@
         <!-- Game Over Screen Overlay -->
         <div id="gameover-screen" class="absolute inset-0 bg-slate-950/90 backdrop-blur-md flex flex-col items-center justify-center z-30 hidden p-6 text-center">
             <h2 class="arcade-font text-3xl md:text-4xl text-rose-500 glow-text mb-2">GAME OVER</h2>
-            <p class="text-slate-400 text-sm mb-6">The kitchen got too hot to handle!</p>
+            <p class="text-slate-400 text-sm mb-6">You lost!</p>
             
-            <div class="bg-slate-900 border border-amber-500/30 rounded-2xl p-6 mb-8 w-full max-w-xs space-y-4 shadow-xl">
+            <div class="bg-slate-900 border border-purple-500/30 rounded-2xl p-6 mb-8 w-full max-w-xs space-y-4 shadow-xl">
                 <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                     <span class="text-slate-400 text-sm">Final Score</span>
-                    <span id="final-score" class="font-extrabold text-2xl text-amber-400">0</span>
+                    <span id="final-score" class="font-extrabold text-2xl text-purple-400">0</span>
                 </div>
                 <div class="flex justify-between items-center">
                     <span class="text-slate-400 text-sm">High Score</span>
@@ -113,7 +113,7 @@
                 </div>
             </div>
 
-            <button id="restart-btn" class="arcade-font bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-black px-8 py-4 rounded-xl text-lg shadow-lg shadow-amber-500/30 transform transition hover:scale-105 active:scale-95 cursor-pointer border-2 border-amber-300">
+            <button id="restart-btn" class="arcade-font bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-400 hover:to-blue-500 text-slate-950 font-black px-8 py-4 rounded-xl text-lg shadow-lg shadow-purple-500/30 transform transition hover:scale-105 active:scale-95 cursor-pointer border-2 border-purple-300">
                 PLAY AGAIN
             </button>
         </div>
@@ -125,7 +125,7 @@
         <span>🍗 Classic Wing (+10)</span>
         <span>🔥 Spicy Wing (+25)</span>
         <span>⭐ Golden Wing (+50)</span>
-        <span>💀 Burnt Bone (-1 Life)</span>
+        <span> Bone (-1 Life)</span>
     </div>
 
     <script>
@@ -348,7 +348,7 @@
 
         // --- Item Spawning ---
         const itemTypes = [
-            { type: 'normal', name: 'Crispy Wing', points: 10, prob: 0.55, color: '#f59e0b', size: 30 },
+            { type: 'normal', name: 'Chicken Wing', points: 10, prob: 0.55, color: '#f59e0b', size: 30 },
             { type: 'spicy', name: 'Spicy Wing', points: 25, prob: 0.25, color: '#ef4444', size: 32 },
             { type: 'golden', name: 'Golden Wing', points: 50, prob: 0.10, color: '#fbbf24', size: 36 },
             { type: 'hazard', name: 'Burnt Bone', points: 0, prob: 0.10, color: '#64748b', size: 28 }
@@ -620,7 +620,7 @@
 
         function startGame() {
             score = 0;
-            lives = 3;
+            lives = 2;
             combo = 1;
             comboTimer = 0;
             gameSpeedMultiplier = 1;
